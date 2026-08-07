@@ -2,13 +2,9 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
 public class LoginTest extends BaseTest {
-
-	
-	
 	
 	@Test
 	public void login() {
-		
 		LoginPage page1 = new LoginPage(driver);
 		page1.loginclick1();
 		page1.email_txt();
