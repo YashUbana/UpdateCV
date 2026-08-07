@@ -6,6 +6,7 @@
       <class name="LoginTest">
         <methods>
           <include name="login"/>
+          <include name="closeit"/>
           <include name="openbrowser"/>
         </methods>
       </class> <!-- LoginTest -->

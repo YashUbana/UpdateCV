@@ -19,6 +19,10 @@ public class BasePage {
 		this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 	}
 	
+	public WebElement findElementWithClickWait(By element) {
+		return wait.until(ExpectedConditions.elementToBeClickable(element));
+	}
+	
 	public void click(WebElement btn) {
 		wait.until(ExpectedConditions.visibilityOf(btn)).click();
 	}

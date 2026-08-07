@@ -21,36 +21,35 @@ public class LoginPage extends BasePage {
 	
 
 	protected void loginclick1() {
-		WebElement loginBtn1 = driver.findElement(loginbutton);
+		WebElement loginBtn1 = findElementWithClickWait(loginbutton);
 		click(loginBtn1);
 	}
 	
 	protected void email_txt() {
-		WebElement emailinput = driver.findElement(email);
+		WebElement emailinput = findElementWithClickWait(email);
 		writeinput(emailinput, "yashubana789@gmail.com");
 	}
 	
 	protected void pass_txt() {
-		WebElement passwordinput = driver.findElement(password);
+		WebElement passwordinput = findElementWithClickWait(password);
 		writeinput(passwordinput, "Yash@1234");
 	}
 	
 	protected void loginclick2() {
-		WebElement loginBtn2 = driver.findElement(login);
+		WebElement loginBtn2 = findElementWithClickWait(login);
 		click(loginBtn2);
 	}
 	
 	protected void profilebtnclick() {
-		WebElement profilebtnElement = driver.findElement(profile);
+		WebElement profilebtnElement = findElementWithClickWait(profile);
 		click(profilebtnElement);
 	}
 	
 	protected void deletefile() {
 		
-		WebElement deletebtnElement1 = driver.findElement(deletebtn1);
-		WebElement deletebtnElement2 = driver.findElement(deletebtn2);
-		
+		WebElement deletebtnElement1 = findElementWithClickWait(deletebtn1);
 		click(deletebtnElement1);
+		WebElement deletebtnElement2 = findElementWithClickWait(deletebtn2);
 		click(deletebtnElement2);
 		
 	}
