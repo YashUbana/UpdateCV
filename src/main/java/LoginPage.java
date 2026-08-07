@@ -57,7 +57,7 @@ public class LoginPage extends BasePage {
 	
 	protected void uploadfile() {
 //		WebElement fileuploadElement = driver.findElement(fileupload);
-		String directry = "D:\\Testing.pdf";
+		String directry = "D:\\Yash_ResumeA.pdf";
 		uploadfile(fileupload, directry);
 	}
 			

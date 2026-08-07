@@ -31,7 +31,7 @@
                 <configuration>
                     <includes>
                         <!-- Automatically runs any class ending in Test or Testcase -->
-                    		<include>BaseTest.java</include>
+                    		
                     		<include>LoginTest.java</include>
                     </includes>
                 </configuration>
