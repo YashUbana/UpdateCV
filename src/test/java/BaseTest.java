@@ -1,3 +1,5 @@
+import java.util.Collections;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -15,8 +17,12 @@ public class BaseTest {
 		option.addArguments("--window-size=1920,1080");
 	    option.addArguments("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0");
 
+	    option.addArguments("--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36");
+		option.addArguments("--disable-blink-features=AutomationControlled");
+		option.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
+		option.setExperimentalOption("useAutomationExtension", false);
 
-		driver = new ChromeDriver();
+		driver = new ChromeDriver(option);
 		driver.get("http://www.naukri.com/");
 //		driver.manage().window().maximize();
 	}
