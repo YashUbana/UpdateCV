@@ -1,8 +1,13 @@
+import java.io.File;
+import java.io.IOException;
+
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.io.FileHandler;
+
 
 public class LoginPage extends BasePage {
 	
@@ -41,8 +46,22 @@ public class LoginPage extends BasePage {
 	}
 	
 	protected void profilebtnclick() {
-		WebElement profilebtnElement = findElementWithClickWait(profile);
-		click(profilebtnElement);
+		
+		try {
+			WebElement profilebtnElement = findElementWithClickWait(profile);
+			click(profilebtnElement);
+		} catch (Exception e) {
+			File srcFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		    
+		    // Save it directly into the target directory
+		    try {
+				FileHandler.copy(srcFile, new File("target\\error-screenshot.png"));
+			} catch (IOException e1) {
+				e1.printStackTrace();
+			}
+		    throw e; 
+		}
+		
 	}
 	
 	protected void deletefile() {
