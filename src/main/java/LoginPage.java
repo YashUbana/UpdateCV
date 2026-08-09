@@ -75,7 +75,9 @@ public class LoginPage extends BasePage {
 	
 	protected void uploadfile() {
 //		WebElement fileuploadElement = driver.findElement(fileupload);
-		String directry = "D:\\Yash_ResumeA.pdf";
+		String sysPath = System.getProperty("user.dir");
+		String directry = sysPath + "/src/test/resources/Yash_ResumeA.pdf";
+		System.out.println(directry);
 		uploadfile(fileupload, directry);
 	}
 			
