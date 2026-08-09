@@ -28,5 +28,5 @@ jobs:
       if: always()  # Ensures this runs even if the 'mvn test' step fails
       with:
         name: selenium-screenshots
-        path: target/surefire-reports/error-screenshot.png
+        path: error-screenshot.png
         if-no-files-found: ignore  # Keeps the build clean if the test passes without errors
