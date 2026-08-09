@@ -55,7 +55,7 @@ public class LoginPage extends BasePage {
 		    
 		    // Save it directly into the target directory
 		    try {
-				FileHandler.copy(srcFile, new File("target\\error-screenshot.png"));
+				FileHandler.copy(srcFile, new File("error-screenshot.png"));
 			} catch (IOException e1) {
 				e1.printStackTrace();
 			}
