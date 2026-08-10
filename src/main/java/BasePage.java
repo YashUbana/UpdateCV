@@ -35,3 +35,6 @@ public class BasePage {
 		wait.until(ExpectedConditions.presenceOfElementLocated(input)).sendKeys(str);
 	}
 }
+
+
+
