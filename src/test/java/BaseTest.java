@@ -46,6 +46,8 @@ public class BaseTest {
 
 		CookieInjector.CookieInject(driver);
 		
+		Screenshoter.takeScreenshot(driver, "BaseTest");
+		
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='view-profile-wrapper']/a")));
 		
 		Screenshoter.takeScreenshot(driver, "BaseTest");
