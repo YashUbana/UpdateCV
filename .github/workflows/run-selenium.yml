@@ -21,6 +21,9 @@ jobs:
         cache: 'maven'
 
     - name: Run Selenium Test Cases
+      env:
+        # This links your GitHub Secret to your Java Environment Context
+        NAUKRI_JSON_COOKIES: ${{ secrets.NAUKRI_JSON_COOKIES }}
       run: mvn test
 
     - name: Upload Error Screenshots
