@@ -23,14 +23,18 @@ public class LoginPage extends BasePage {
 		super(driver);
 	}
 	
+	
 
 	protected void loginclick1() {
 		WebElement loginBtn1 = findElementWithClickWait(loginbutton);
+		
+
 		click(loginBtn1);
 	}
 	
 	protected void email_txt() {
 		WebElement emailinput = findElementWithClickWait(email);
+		
 		writeinput(emailinput, "yashubana789@gmail.com");
 	}
 	
@@ -45,21 +49,9 @@ public class LoginPage extends BasePage {
 	}
 	
 	protected void profilebtnclick() {
-		
-		try {
-			WebElement profilebtnElement = findElementWithClickWait(profile);
-			click(profilebtnElement);
-		} catch (Exception e) {
-			File srcFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-		    
-		    // Save it directly into the target directory
-		    try {
-				FileHandler.copy(srcFile, new File("error-screenshot.png"));
-			} catch (IOException e1) {
-				e1.printStackTrace();
-			}
-		    throw e; 
-		}
+		WebElement profilebtnElement = findElementWithClickWait(profile);
+		waitTillElementIsVisible(profile);
+		click(profilebtnElement);
 		
 	}
 	
@@ -68,6 +60,7 @@ public class LoginPage extends BasePage {
 		WebElement deletebtnElement1 = findElementWithClickWait(deletebtn1);
 		click(deletebtnElement1);
 		WebElement deletebtnElement2 = findElementWithClickWait(deletebtn2);
+		waitTillElementIsVisible(deletebtn2);
 		click(deletebtnElement2);
 		
 	}
@@ -77,6 +70,7 @@ public class LoginPage extends BasePage {
 		String sysPath = System.getProperty("user.dir");
 		String directry = sysPath + "/src/test/resources/Yash_ResumeA.pdf";
 		System.out.println(directry);
+		waitTillElementIsVisible(fileupload);
 		uploadfile(fileupload, directry);
 	}
 			

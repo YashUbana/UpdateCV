@@ -6,10 +6,14 @@ import java.util.Set;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -21,11 +25,13 @@ public class BaseTest {
 	
 	public WebDriver driver;
 	public ChromeOptions option;
+	public WebDriverWait wait;
 	@BeforeMethod
 	public void openbrowser() {
 		
 		option = new ChromeOptions() ;
 		
+		option.addArguments("--start-maximized");
 		option.addArguments("--headless=new"); 
         option.addArguments("--no-sandbox");
         option.addArguments("--disable-dev-shm-usage");
@@ -35,6 +41,8 @@ public class BaseTest {
 		driver = new ChromeDriver(option);
 
 		CookieInjector.CookieInject(driver);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='view-profile-wrapper']/a")));
 		
 		Screenshoter.takeScreenshot(driver, "BaseTest");
 		
