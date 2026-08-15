@@ -1,6 +1,7 @@
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
+import java.time.Duration;
 import java.util.Collections;
 import java.util.Set;
 
@@ -39,6 +40,8 @@ public class BaseTest {
         option.addArguments("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36");
         
 		driver = new ChromeDriver(option);
+		
+		wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
 		CookieInjector.CookieInject(driver);
 		
