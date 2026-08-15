@@ -74,8 +74,6 @@ public class BaseTest {
 		} catch (Exception e) {
 			System.err.println("Automation failed: "+ e.getMessage());
 			e.printStackTrace();
-		}finally {
-			driver.quit();
 		}
 		
 		 
