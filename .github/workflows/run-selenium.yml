@@ -28,8 +28,8 @@ jobs:
 
     - name: Upload Error Screenshots
       uses: actions/upload-artifact@v4
-      if: always()  # Ensures this runs even if the 'mvn test' step fails
+      if: always()  # Uploads screenshots whether tests pass or fail
       with:
         name: selenium-screenshots
-        path: error-screenshot.png
-        if-no-files-found: ignore  # Keeps the build clean if the test passes without errors
+        path: screenshots/*.png  # <--- This will grab EVERY image inside the folder!
+        if-no-files-found: ignore
