@@ -70,7 +70,7 @@ public class LoginPage extends BasePage {
 		String sysPath = System.getProperty("user.dir");
 		String directry = sysPath + "/src/test/resources/Yash_ResumeA.pdf";
 		System.out.println(directry);
-		waitTillElementIsVisible(fileupload);
+		
 		uploadfile(fileupload, directry);
 	}
 			
