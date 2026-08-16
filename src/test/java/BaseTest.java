@@ -39,6 +39,8 @@ public class BaseTest {
         option.addArguments("--disable-blink-features=AutomationControlled");
         option.addArguments("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36");
         
+        
+        
 		driver = new ChromeDriver(option);
 		driver.manage().window().maximize();
 		
@@ -60,7 +62,7 @@ public class BaseTest {
 	public void closeit() throws InterruptedException {
 		if(driver != null) {
 			Thread.sleep(2000);
-			driver.quit();
+			driver.quit();	
 		}else {
 			System.out.println("Browser not found");
 		}

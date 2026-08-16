@@ -40,7 +40,7 @@ public class CookieInjector {
 				
 			}
 			
-			driver.get("https://www.naukri.com/mnjuser/homepage");
+			driver.navigate().refresh();
 			
 			System.out.println("Bypassed OTP!");
 			
